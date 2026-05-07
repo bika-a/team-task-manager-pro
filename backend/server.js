@@ -14,4 +14,5 @@ mongoose.connect(process.env.MONGO_URI)
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/tasks", require("./routes/task"));
 
-app.listen(5001, ()=>console.log("Server running on 5001"));
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, ()=>console.log(`Server running on ${PORT}`));
